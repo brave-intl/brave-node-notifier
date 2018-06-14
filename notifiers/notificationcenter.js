@@ -9,6 +9,8 @@ var notifier = path.join(
   'terminal-notifier.app/Contents/MacOS/terminal-notifier'
 );
 
+// defaults write com.apple.notificationcenterui bannerTime [seconds]
+
 var EventEmitter = require('events').EventEmitter;
 var util = require('util');
 
