@@ -6,7 +6,7 @@ var Growl = require('./growl');
 var path = require('path');
 var notifier = path.join(
   utils.getVendorDir(),
-  'terminal-notifier.app/Contents/MacOS/terminal-notifier'
+  'brave-ads-notifier.app/Contents/MacOS/brave-ads-notifier'
 );
 
 // defaults write com.apple.notificationcenterui bannerTime [seconds]

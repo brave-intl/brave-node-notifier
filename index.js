@@ -9,7 +9,7 @@ var utils = require('./lib/utils');
 const osType = os.type();
 const defID =
   osType === 'Darwin'
-    ? 'com.brave.terminal-notifier'
+    ? 'com.brave.brave-ads-notifier'
     : 'com.squirrel.brave.Brave';
 
 // All notifiers
