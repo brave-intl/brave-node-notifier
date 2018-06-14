@@ -2,7 +2,7 @@ const exec = require('child_process').exec;
 var os = require('os');
 const path = require('path');
 const plist = require('plist');
-const underscore = require('underscore');
+// const underscore = require('underscore');
 
 var utils = require('./lib/utils');
 
@@ -88,6 +88,7 @@ const configured = (appID, callback) => {
           return callback(null, false);
         }
 
+        /* NOT YET
         exec('defaults export com.apple.ncprefs -', (err, stdout, stderr) => {
           let data, entry;
 
@@ -99,6 +100,10 @@ const configured = (appID, callback) => {
           });
           callback(null, entry && !!(entry.flags & (1 << 4)));
         });
+         */
+
+        /* TEMPORARY */
+        return callback(null, true);
       });
     },
 
