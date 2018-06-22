@@ -206,7 +206,10 @@ const inform = (title, message, idle, appID, callback) => {
         'the user dismissed the notification.': 'closed'
       }[arguments[1]];
     }
-    if (!result) result = 'unknown';
+    if (!result) {
+      console.error(JSON.stringify(arguments, null, 2));
+      result = 'unknown';
+    }
     if (result.indexOf('Clicked') !== -1) result = 'clicked';
     if (result === 'timeout') result = 'ignored';
 
