@@ -1,11 +1,11 @@
-# brave-node-notifier
+# brave-ads-notifier
 
 This is a fork of [node-notifier](https://github.com/mikaelbr/node-notifier).
 The only differences (at this point) is that:
 
 * the embedded `terminal-notifier` application for macOS has a different `Terminal.icns` file
 
-* the utility routines are exposed via `require('brave-node-notifier`).utils`
+* the utility routines are exposed via `require('brave-ads-notifier`).utils`
 
 * an example of the preferred calling sequence is [here](example/brave-example.js)
 
