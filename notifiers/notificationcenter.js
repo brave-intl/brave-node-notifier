@@ -80,13 +80,6 @@ NotificationCenter.prototype.notify = function(options, callback) {
 
   var argsList = utils.constructArgumentList(options);
   if (utils.isMountainLion()) {
-    console.log(
-      JSON.stringify(
-        { arg0: this.options.customPath || notifier, args: argsList },
-        null,
-        2
-      )
-    );
     utils.fileCommandJson(
       this.options.customPath || notifier,
       argsList,
