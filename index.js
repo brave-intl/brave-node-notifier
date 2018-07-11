@@ -108,9 +108,14 @@ const configured = (appID, callback) => {
     },
 
     Windows_NT: () => {
+      /* NOT YET
       module.exports.notify({ n: appID }, function() {
         return callback(null, arguments[1] === 'enabled');
       });
+       */
+
+      /* TEMPORARY */
+      return callback(null, true);
     }
   }[osType];
 
