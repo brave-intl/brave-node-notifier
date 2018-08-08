@@ -1,19 +1,23 @@
 /**
  * Wrapper for the toaster (https://github.com/nels-o/toaster)
  */
+var fs = require('fs');
 var path = require('path');
 var utils = require('../lib/utils');
 var newP = true;
 
-var notifier;
-if (newP) {
+var notifier = 'C:/Program Files (x86)/App vNext Notifier';
+if (!fs.existsSync(notifier)) {
   notifier = path.resolve(
     utils.getVendorDir(),
     'windows-notifier/notifier.exe'
   );
-} else {
-  notifier = path.resolve(utils.getVendorDir(), 'snoreToast/SnoreToast.exe');
+  if (!fs.existsSync(notifier)) {
+    notifier = path.resolve(utils.getVendorDir(), 'snoreToast/SnoreToast.exe');
+    newP = false;
+  }
 }
+console.log('using ' + notifier);
 var Balloon = require('./balloon');
 
 var EventEmitter = require('events').EventEmitter;
