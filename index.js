@@ -203,17 +203,14 @@ const inform = (title, message, idle, appID, callback) => {
   if (extras) extras = extras();
 
   module.exports.notify(Object.assign(options, extras || {}), function() {
+    let arg1 = arguments[1];
     let result = arguments[2] && arguments[2].activationType;
 
-    if (!result && arguments[1]) {
-      result = {
-        'the user clicked on the toast.': 'contentsClicked',
-        'the user activated the notification': 'contentsClicked',
-        'the toast has timed out': 'timeout',
-        'the notification has timed out.': 'timeout',
-        'the user dismissed this toast': 'closed',
-        'the user dismissed the notification.': 'closed'
-      }[arguments[1]];
+    if (!result && arg1) {
+      if (arg1.indexOf('activated') !== -1 || arg1.indexOf('clicked') !== -1)
+        result = 'contentsClicked';
+      else if (arg1.indexOf('dismissed') !== -1) result = 'closed';
+      else if (arg1.indexOf('timed out') !== -1) result = 'timeout';
     }
     if (!result) {
       console.error(JSON.stringify(arguments, null, 2));

@@ -17,7 +17,7 @@ if (!fs.existsSync(notifier)) {
     newP = false;
   }
 }
-console.log('using ' + notifier);
+if (require('os').type() === 'Windows_NT') console.log('using ' + notifier);
 var Balloon = require('./balloon');
 
 var EventEmitter = require('events').EventEmitter;
