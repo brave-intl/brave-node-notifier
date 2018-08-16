@@ -6,7 +6,7 @@ var path = require('path');
 var utils = require('../lib/utils');
 var newP = true;
 
-var notifier = 'C:/Program Files (x86)/App vNext Notifier/notifier.exe';
+var notifier = 'C:/Program Files (x86)/Brave Ads Notifier/notifier.exe';
 if (!fs.existsSync(notifier)) {
   notifier = path.resolve(
     utils.getVendorDir(),

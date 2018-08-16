@@ -207,9 +207,9 @@ const inform = (title, message, idle, appID, callback) => {
     let result = arguments[2] && arguments[2].activationType;
 
     if (!result && arg1) {
-      if (arg1.indexOf('activated') !== -1 || arg1.indexOf('clicked') !== -1)
+      if (arg1.indexOf('activated') !== -1 || arg1.indexOf('clicked') !== -1) {
         result = 'contentsClicked';
-      else if (arg1.indexOf('dismissed') !== -1) result = 'closed';
+      } else if (arg1.indexOf('dismissed') !== -1) result = 'closed';
       else if (arg1.indexOf('timed out') !== -1) result = 'timeout';
     }
     if (!result) {

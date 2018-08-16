@@ -1,6 +1,6 @@
 {
   "name": "brave-ads-notifier",
-  "version": "6.2.0",
+  "version": "6.2.1",
   "description":
     "A fork of a Node.js module for sending notifications on native Mac, Windows (post and pre 8) and Linux (or Growl as fallback)",
   "main": "index.js",
