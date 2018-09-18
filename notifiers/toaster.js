@@ -6,16 +6,13 @@ var path = require('path');
 var utils = require('../lib/utils');
 var newP = true;
 
-var notifier = 'C:/Program Files (x86)/Brave Ads Notifier/notifier.exe';
+var notifier = path.resolve(
+  utils.getVendorDir(),
+  'windows-notifier/notifier.exe'
+);
 if (!fs.existsSync(notifier)) {
-  notifier = path.resolve(
-    utils.getVendorDir(),
-    'windows-notifier/notifier.exe'
-  );
-  if (!fs.existsSync(notifier)) {
-    notifier = path.resolve(utils.getVendorDir(), 'snoreToast/SnoreToast.exe');
-    newP = false;
-  }
+  notifier = path.resolve(utils.getVendorDir(), 'snoreToast/SnoreToast.exe');
+  newP = false;
 }
 if (require('os').type() === 'Windows_NT') console.log('using ' + notifier);
 var Balloon = require('./balloon');
